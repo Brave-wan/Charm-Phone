@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none">
+
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:indicator_drawable_selected="@drawable/selected_welcome_radius"
+            app:indicator_drawable_unselected="@drawable/selected_welcome_radius_un"
+            app:indicator_height="8dp"
+            app:indicator_margin="6dp"
+            app:indicator_width="8dp" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tb_experience"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            app:tabIndicatorColor="#FF5A6C"
+            app:tabIndicatorHeight="4dp"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="@color/charm_home_welcome_gray_tx" />
+
+        <www.jinke.com.charmhome.widget.WrapContentHeightViewPager
+            android:id="@+id/vp_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</ScrollView>

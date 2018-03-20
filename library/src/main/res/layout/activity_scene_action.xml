@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/charm_home_default"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/rg_scene_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rb_scene_action_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:button="@null"
+            android:drawableRight="@drawable/select_scene_action"
+            android:paddingBottom="15dp"
+            android:paddingLeft="23dp"
+            android:paddingRight="30dp"
+            android:paddingTop="15dp"
+            android:text="开" />
+
+        <RadioButton
+            android:id="@+id/rb_scene_action_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:button="@null"
+            android:drawableRight="@drawable/select_scene_action"
+            android:paddingBottom="15dp"
+            android:paddingLeft="23dp"
+            android:paddingRight="30dp"
+            android:paddingTop="15dp"
+            android:text="关" />
+    </RadioGroup>
+
+</LinearLayout>

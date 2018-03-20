@@ -1,0 +1,131 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="www.jinke.com.charmhome">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="Android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity
+            android:name=".ui.activity.WifiConnectActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.GatewayActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.HomeMangerActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.ScenesManagerActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.StartPageActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.ExperienceActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <!--添加设备-->
+        <activity
+            android:name=".ui.lock.LockAddDeviceActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.ScanningLockCodeActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <!--门锁添加成功-->
+        <activity
+            android:name=".ui.lock.LockAddFinishActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.LockAddFailActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.LockDeviceInfoActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.DeviceAttributesActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.InputFingerActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.DevicePassActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.InputDeviceNameActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.FingerMangerActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.EditFingerActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.InputFingerFinishActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.ScannerCodeActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.lock.InputLoginPassActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.HouseHomeActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.family.FamilyManagerActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.family.FamilyNameActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.family.RoomManagerActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.family.EditRoomActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.family.AddRoomActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.family.AddFamilyActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.scene.EditSceneActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.scene.SelectDeviceActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.activity.scene.TimeSelectActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ui.activity.scene.SceneIconActivity" />
+        <activity android:name=".ui.activity.scene.SceneActionActivity"/>
+        <activity android:name=".ui.activity.scene.SceneDelayActivity"/>
+    </application>
+</manifest>

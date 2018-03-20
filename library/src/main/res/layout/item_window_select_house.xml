@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_house"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/img_select_house_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_window_select_house" />
+
+        <TextView
+            android:id="@+id/tv_select_house"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/img_select_house_left"
+            android:paddingBottom="15dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="15dp"
+            android:text="金沙水岸08-05"
+            android:textColor="@color/charm_home_house_txt" />
+    </RelativeLayout>
+
+
+</LinearLayout>

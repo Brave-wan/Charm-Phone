@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/charm_home_default"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:paddingBottom="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="15dp">
+
+        <TextView
+            android:id="@+id/tv_room_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="家庭名称"
+            android:textColor="@color/charm_home_welcome_gray_tx" />
+
+        <EditText
+            android:id="@+id/ed_edit_room_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_room_name"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/img_edit_room_delete"
+            android:layout_toRightOf="@+id/tv_room_name"
+            android:background="@android:color/transparent"
+            android:hint="请输入家庭名称"
+            android:maxEms="12"
+            android:maxLines="1"
+            android:paddingLeft="20dp"
+            android:textColor="@color/charm_home_house_txt"
+            android:textColorHint="@color/charm_home_welcome_gray_tx"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/img_edit_room_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/icon_family_manager_close" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_room_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="创建"
+        android:textColor="@color/charm_home_house_home_energy"
+        android:textSize="18sp" />
+
+</RelativeLayout>

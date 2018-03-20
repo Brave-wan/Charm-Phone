@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/charm_home_default"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_family_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:paddingBottom="20dp"
+        android:paddingLeft="29dp"
+        android:paddingRight="25dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="家庭名称"
+            android:textColor="@color/charm_home_welcome_gray_tx" />
+
+        <TextView
+            android:id="@+id/tv_family_manager_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/icon_charm_home_arrow"
+            android:text="金沙水岸08-501"
+            android:textColor="@color/charm_home_house_txt" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_room_manager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="20dp"
+        android:paddingLeft="29dp"
+        android:paddingRight="25dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="房间管理"
+            android:textColor="@color/charm_home_welcome_gray_tx" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/icon_charm_home_arrow"
+            android:textColor="@color/charm_home_house_txt" />
+    </RelativeLayout>
+</LinearLayout>

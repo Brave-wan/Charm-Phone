@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_device_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_welcome_experence_off"
+        android:paddingBottom="18dp">
+
+        <ImageView
+            android:id="@+id/img_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/icon_house_device_temp" />
+
+        <ImageView
+            android:id="@+id/img_device_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:src="@drawable/icon_house_device_more" />
+
+        <TextView
+            android:id="@+id/tv_device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/img_device"
+            android:layout_below="@+id/img_device"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="end"
+            android:maxEms="4"
+            android:maxLines="1"
+            android:text="温度传感器"
+            android:textColor="@color/charm_home_house_txt"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_room_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_device_name"
+            android:layout_below="@+id/tv_device_name"
+            android:ellipsize="end"
+            android:maxEms="4"
+            android:maxLines="1"
+            android:text="办公室"
+            android:textColor="@color/charm_home_welcome_gray_tx"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_device_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_room_name"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tv_room_name"
+            android:text="9℃"
+            android:textColor="@color/charm_home_welcome_gray_tx" />
+
+        <ImageView
+            android:id="@+id/img_device_open_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_room_name"
+            android:layout_toLeftOf="@+id/img_device_more"
+            android:src="@drawable/icon_house_home_switch_no" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_device_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_charm_home_device_add">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/icon_family_manager_add"
+            android:text="添加设备"
+            android:textColor="@color/charm_home_house_txt" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

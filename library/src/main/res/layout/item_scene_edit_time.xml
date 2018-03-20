@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_edit_scene_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/icon_edit_scene_add"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:id="@+id/img_edit_scene_red_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/icon_scene_task_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_device_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingLeft="21dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_timing_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14:21"
+                android:textColor="@color/charm_home_default_red"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_timing_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_timing_time"
+                android:layout_below="@+id/tv_timing_time"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="周一 周二 周三"
+                android:textColor="@color/charm_home_house_txt"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/img_timing_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                 />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_task_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/icon_edit_scene_add"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_task_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:text="+　添加定时"
+            android:textColor="#B0B0B0"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img_add_line_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/icon_scene_task_line" />
+    </RelativeLayout>
+</LinearLayout>

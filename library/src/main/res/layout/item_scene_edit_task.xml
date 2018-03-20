@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_edit_scene_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/icon_edit_scene_add"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:id="@+id/img_edit_scene_red_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/icon_scene_task_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_device_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingLeft="21dp"
+            android:paddingTop="20dp">
+
+
+            <TextView
+                android:id="@+id/tv_device_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:drawableLeft="@drawable/icon_device_select_lamp_red"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="灯"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="2dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_device_name"
+                android:background="@color/charm_home_default" />
+
+            <TextView
+                android:id="@+id/tv_device_room_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/tv_device_name"
+                android:text="主卧"
+                android:textColor="#7D7D7D" />
+
+            <ImageView
+                android:id="@+id/img_scene_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:padding="5dp"
+                android:src="@drawable/icon_edit_scene_trash" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_device_title"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_scene_delay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/icon_charm_home_arrow"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="立即" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="2dp"
+                android:layout_height="30dp"
+                android:background="@color/charm_home_default" />
+
+            <RelativeLayout
+                android:id="@+id/rl_scene_action"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/icon_charm_home_arrow"
+                    android:gravity="center"
+                    android:paddingBottom="1dp"
+                    android:paddingTop="10dp"
+                    android:text="设置动作" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_task_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/icon_edit_scene_add"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_task_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:text="+　继续添执行任务"
+            android:textColor="#B0B0B0"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img_add_line_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/icon_scene_task_line" />
+    </RelativeLayout>
+</LinearLayout>

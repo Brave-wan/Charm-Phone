@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_scene_manager_item_bg"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/img_scene_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp" />
+
+        <TextView
+            android:id="@+id/img_scene_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_scene_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:text="回家"
+            android:textColor="@color/charm_home_house_txt"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/img_scene_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:src="@drawable/icon_scene_manager_more" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

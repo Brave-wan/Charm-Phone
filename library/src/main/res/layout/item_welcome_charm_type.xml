@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_experience_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/icon_welcome_experence_off"
+        android:drawableTop="@drawable/icon_welcome_aircondition0"
+        android:gravity="center"
+        android:paddingBottom="25dp"
+        android:paddingTop="25dp"
+        android:text="空调" />
+
+
+</RelativeLayout>
