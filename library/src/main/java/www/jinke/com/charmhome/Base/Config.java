@@ -12,7 +12,7 @@ import com.orvibo.homemate.util.AppTool;
  */
 
 public class Config {
-    public static final String userName = "15155120227";
+    public static final String userName = "17353261553";
     public static final String userPwd = "jkwy8888";
 
     public static void initOvb(Application application) {

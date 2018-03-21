@@ -1,6 +1,9 @@
 package www.jinke.com.charmhome.presenter.scene;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.orvibo.homemate.api.SmartSceneApi;
@@ -66,16 +69,63 @@ public class SceneIconPresent {
         }
     }
 
-    public void setSceneIcon(int pic, Scene scene) {
+    public void setSceneIcon(final int pic, Scene scene) {
         SmartSceneApi.modifyScene(Config.userName, scene.getSceneNo(), scene.getSceneName(),
                 pic, Integer.valueOf(String.valueOf(scene.getUpdateTime() / 1000)), new BaseResultListener() {
                     @Override
                     public void onResultReturn(BaseEvent baseEvent) {
                         if (baseEvent.isSuccess()) {
+                            mView.onPicSuccess(pic);
                         }
                     }
                 });
     }
 
+    public void setIcon(int type, TextView tv_scene_mode_name) {
+        Drawable drawable = null;
+        switch (type) {
+            case 0:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_scene_icon_home);
+                break;
+            case 1:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_scene_icon_clock);
+                break;
+            case 2:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_scene_icon_leave);
+                break;
+            case 3:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_scene_icon_bed);
+                break;
+            case 4:
+                drawable = mContext.getResources().getDrawable(R.drawable.iocn_scene_icon_sofa);
+                break;
+            case 5:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_scene_icon_rest);
+                break;
+            case 6:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_scene_icon_master);
+                break;
+            case 7:
+                drawable = mContext.getResources().getDrawable(R.drawable.iocn_scene_icon_electric);
+                break;
+            case 8:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_scene_icon_cup);
+                break;
+            case 9:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_scene_icon_furnitur);
+                break;
+            case 10:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_scene_icon_chair);
+                break;
+            case 11:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_device_select_curtain_red);
+                break;
+            default:
+                drawable = mContext.getResources().getDrawable(R.drawable.icon_device_select_curtain_red);
+                break;
+        }
+        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+        tv_scene_mode_name.setCompoundDrawables(drawable, null, null, null);
+    }
 
 }

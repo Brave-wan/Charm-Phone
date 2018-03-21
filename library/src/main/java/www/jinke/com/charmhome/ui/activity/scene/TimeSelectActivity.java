@@ -30,7 +30,7 @@ import www.jinke.com.charmhome.view.scene.ITimeSelectView;
 public class TimeSelectActivity extends BaseActivity implements AdapterView.OnItemClickListener, ITimeSelectView {
     private GridView gv_time_list;
     private TimeSelectAdapter adapter;
-    TextView tv_time_repeat_number;
+    private  TextView tv_time_repeat_number;
     private List<TimingBean> list = new ArrayList<>();
     private Timing bean;
     LinearLayout viewGroup;

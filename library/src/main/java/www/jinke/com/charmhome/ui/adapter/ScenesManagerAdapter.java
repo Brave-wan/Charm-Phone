@@ -32,12 +32,11 @@ public class ScenesManagerAdapter extends CommonAdapter<Scene> {
         TextView img_scene_name = (TextView) baseViewHolder.getViewByViewId(R.id.img_scene_name);
         ImageView img_scene_setting = (ImageView) baseViewHolder.getViewByViewId(R.id.img_scene_setting);
         ImageView img_scene_icon = (ImageView) baseViewHolder.getViewByViewId(R.id.img_scene_icon);
-        img_scene_name.setText(scene.getSceneName());
+        img_scene_name.setText(scene.getSceneName() + scene.getPic());
         setIcon(scene.getPic(), img_scene_icon);
         img_scene_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(mContext, EditSceneActivity.class);
                 intent.putExtra("scene", scene);
                 mContext.startActivity(intent);

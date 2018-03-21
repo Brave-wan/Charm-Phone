@@ -2,14 +2,8 @@ package www.jinke.com.charmhome.ui.activity.scene;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.blankj.utilcode.util.LogUtils;
-import com.blankj.utilcode.util.StringUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.orvibo.homemate.api.LocalDataApi;
 import com.orvibo.homemate.bo.Scene;
 import com.orvibo.homemate.bo.Timing;
@@ -32,7 +26,7 @@ import www.jinke.com.charmhome.view.scene.IEditSceneView;
  * Created by root on 18-3-15.
  */
 
-public class EditSceneActivity extends BaseActivity implements View.OnClickListener,
+public class CreateSceneActivity extends BaseActivity implements View.OnClickListener,
         SceneTaskListAdapter.OnEditSceneListener, IEditSceneView {
     private MyListView lv_task_list, lv_task_time;
     private Scene scene;
@@ -83,7 +77,6 @@ public class EditSceneActivity extends BaseActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         adapter.setDataList(present.getListSorting(list));
-//        present.addSceneBind(list,scene);
     }
 
     @Override

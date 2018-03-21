@@ -49,6 +49,7 @@ public class SceneIconActivity extends BaseActivity implements AdapterView.OnIte
         setRightVisibility(R.color.charm_home_default_red, "保存");
         adapter = new SceneIconAdapter(this, R.layout.item_scene_icon_list, list);
         gv_scene_icon.setAdapter(adapter);
+        present.setIcon(scene.getPic(), tv_scene_mode_name);
     }
 
     @Override
@@ -113,5 +114,10 @@ public class SceneIconActivity extends BaseActivity implements AdapterView.OnIte
     @Override
     public void onSuccess() {
         finish();
+    }
+
+    @Override
+    public void onPicSuccess(int pic) {
+        scene.setPic(pic);
     }
 }

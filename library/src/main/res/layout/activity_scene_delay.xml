@@ -2,110 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/charm_home_default"
     android:orientation="vertical">
 
-    <RadioGroup
-        android:id="@+id/rg_scene_state"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical">
+        android:background="@drawable/icon_scene_time_delay"
+        android:paddingBottom="30dp"
+        android:paddingTop="10dp">
 
-        <RadioButton
-            android:id="@+id/rb_scene_delay_immediately"
+        <RelativeLayout
+            android:id="@+id/ll_time_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:button="@null"
-            android:drawableRight="@drawable/select_scene_action"
-            android:paddingBottom="15dp"
-            android:paddingLeft="23dp"
-            android:paddingRight="30dp"
-            android:paddingTop="15dp"
-            android:text="立即" />
+            android:layout_height="200dp"
+            android:layout_centerInParent="true">
 
-        <RadioButton
-            android:id="@+id/rb_scene_delay_one"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:button="@null"
-            android:drawableRight="@drawable/select_scene_action"
-            android:paddingBottom="15dp"
-            android:paddingLeft="23dp"
-            android:paddingRight="30dp"
-            android:paddingTop="15dp"
-            android:text="1秒" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="80dp"
+                android:layout_marginEnd="127dp"
+                android:text="秒"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
 
-        <RadioButton
-            android:id="@+id/rb_scene_delay_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:background="@color/white"
-            android:button="@null"
-            android:drawableRight="@drawable/select_scene_action"
-            android:paddingBottom="15dp"
-            android:paddingLeft="23dp"
-            android:paddingRight="30dp"
-            android:paddingTop="15dp"
-            android:text="2秒" />
 
-        <RadioButton
-            android:id="@+id/rb_scene_delay_three"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:background="@color/white"
-            android:button="@null"
-            android:drawableRight="@drawable/select_scene_action"
-            android:paddingBottom="15dp"
-            android:paddingLeft="23dp"
-            android:paddingRight="30dp"
-            android:paddingTop="15dp"
-            android:text="3秒" />
+    </RelativeLayout>
 
-        <RadioButton
-            android:id="@+id/rb_scene_delay_for"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:background="@color/white"
-            android:button="@null"
-            android:drawableRight="@drawable/select_scene_action"
-            android:paddingBottom="15dp"
-            android:paddingLeft="23dp"
-            android:paddingRight="30dp"
-            android:paddingTop="15dp"
-            android:text="4秒" />
+    <TextView
+        android:id="@+id/tv_scene_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="65秒后执行"
+        android:textColor="@color/charm_home_default_red"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-        <RadioButton
-            android:id="@+id/rb_scene_delay_five"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:background="@color/white"
-            android:button="@null"
-            android:drawableRight="@drawable/select_scene_action"
-            android:paddingBottom="15dp"
-            android:paddingLeft="23dp"
-            android:paddingRight="30dp"
-            android:paddingTop="15dp"
-            android:text="5秒" />
-
-        <RadioButton
-            android:id="@+id/rb_scene_delay_customize"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:background="@color/white"
-            android:button="@null"
-            android:drawableRight="@drawable/icon_charm_home_arrow"
-            android:paddingBottom="15dp"
-            android:paddingLeft="23dp"
-            android:paddingRight="30dp"
-            android:paddingTop="15dp"
-            android:text="自定义时间" />
-    </RadioGroup>
 </LinearLayout>

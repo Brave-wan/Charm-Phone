@@ -126,6 +126,10 @@
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".ui.activity.scene.SceneIconActivity" />
         <activity android:name=".ui.activity.scene.SceneActionActivity"/>
+        <activity android:name=".ui.activity.scene.SecurityDelayActivity"/>
         <activity android:name=".ui.activity.scene.SceneDelayActivity"/>
+
+        <activity android:name=".ui.activity.scene.CreateSceneActivity"/>
+
     </application>
 </manifest>

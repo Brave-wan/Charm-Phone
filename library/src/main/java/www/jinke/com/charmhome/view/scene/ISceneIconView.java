@@ -8,4 +8,5 @@ import www.jinke.com.charmhome.view.BaseView;
 
 public interface ISceneIconView extends BaseView {
     void onSuccess();
+    void onPicSuccess(int pic);
 }

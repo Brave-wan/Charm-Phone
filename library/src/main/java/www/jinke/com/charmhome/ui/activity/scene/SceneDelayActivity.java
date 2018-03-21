@@ -1,19 +1,27 @@
 package www.jinke.com.charmhome.ui.activity.scene;
 
+import android.view.Gravity;
 import android.view.View;
-import android.widget.RadioGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.blankj.utilcode.util.LogUtils;
+
+import java.util.Locale;
 
 import cn.qqtheme.framework.picker.DatePicker;
-import cn.qqtheme.framework.util.ConvertUtils;
+import cn.qqtheme.framework.picker.OptionPicker;
 import www.jinke.com.charmhome.Base.BaseActivity;
 import www.jinke.com.charmhome.R;
 
 /**
- * Created by root on 18-3-19.
+ * Created by root on 18-3-20.
  */
 
-public class SceneDelayActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
-    RadioGroup rg_scene_state;
+public class SceneDelayActivity extends BaseActivity {
+    RelativeLayout ll_time_content;
+    TextView tv_scene_time;
 
     @Override
     protected int getContentViewId() {
@@ -22,65 +30,43 @@ public class SceneDelayActivity extends BaseActivity implements RadioGroup.OnChe
 
     @Override
     protected void initView() {
-        setTitleText("选择执行时间", R.color.black);
-        setBaseTitleBack(R.color.white);
-        setLeftBackView(R.drawable.icon_charm_home_back);
+        setTitleText("选择执行时间", R.color.white);
+        setBaseTitleBack(R.color.charm_home_default_red);
+        setLeftBackView(R.drawable.icon_back_left);
+        getOptionPicker();
     }
-
-
-    @Override
-    protected void onBackView(View view) {
-        super.onBackView(view);
-        finish();
-    }
-
 
     @Override
     protected void findViewById() {
-        rg_scene_state = findViewById(R.id.rg_scene_state);
-        rg_scene_state.setOnCheckedChangeListener(this);
+        ll_time_content = findViewById(R.id.ll_time_content);
+        tv_scene_time = findViewById(R.id.tv_scene_time);
+        tv_scene_time.setText("hello word");
     }
 
-    @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        if (i == R.id.rb_scene_delay_customize) {
-
+    public void getOptionPicker() {
+        String[] data = new String[66];
+        for (int i = 0; i < 66; i++) {
+            data[i] = i + "" ;
         }
-
-    }
-
-
-    public void onYearMonthDayPicker(View view) {
-        final DatePicker picker = new DatePicker(this);
-        picker.setCanceledOnTouchOutside(true);
-        picker.setUseWeight(true);
-        picker.setTopPadding(ConvertUtils.toPx(this, 10));
-        picker.setRangeEnd(2111, 1, 11);
-        picker.setRangeStart(2016, 8, 29);
-        picker.setSelectedItem(2050, 10, 14);
-        picker.setResetWhileWheel(false);
-        picker.setOnDatePickListener(new DatePicker.OnYearMonthDayPickListener() {
+        OptionPicker picker = new OptionPicker(this, data);
+        picker.setCycleDisable(true);//禁用循环
+        picker.setTextColor(getResources().getColor(R.color.white)
+                , getResources().getColor(R.color.white));//中间滚动项文字颜色
+        picker.setGravity(Gravity.CENTER);
+        picker.setTextSize(35);
+        picker.setLabelTextColor(getResources().getColor(R.color.white));
+        picker.setDividerVisible(false);
+        picker.setBackgroundColor(getResources().getColor(R.color.transparent));
+        picker.setSelectedIndex(10);//默认选中项
+        picker.setOnWheelListener(new OptionPicker.OnWheelListener() {
             @Override
-            public void onDatePicked(String year, String month, String day) {
-                showToast(year + "-" + month + "-" + day);
+            public void onWheeled(int i, String s) {
+                tv_scene_time.setText(s + "秒后执行");
             }
         });
-        picker.setOnWheelListener(new DatePicker.OnWheelListener() {
-            @Override
-            public void onYearWheeled(int index, String year) {
-                picker.setTitleText(year + "-" + picker.getSelectedMonth() + "-" + picker.getSelectedDay());
-            }
 
-            @Override
-            public void onMonthWheeled(int index, String month) {
-                picker.setTitleText(picker.getSelectedYear() + "-" + month + "-" + picker.getSelectedDay());
-            }
-
-            @Override
-            public void onDayWheeled(int index, String day) {
-                picker.setTitleText(picker.getSelectedYear() + "-" + picker.getSelectedMonth() + "-" + day);
-            }
-        });
-        picker.show();
+        View pickerContentView = picker.getContentView();
+        ll_time_content.addView(pickerContentView);
     }
+
 }

@@ -6,25 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 
 import www.jinke.com.charmhome.application.LuMiConfig;
-import www.jinke.com.charmhome.ui.activity.CharmHomeActivity;
-import www.jinke.com.charmhome.ui.activity.ExperienceActivity;
-import www.jinke.com.charmhome.ui.activity.ScannerCodeActivity;
 import www.jinke.com.charmhome.ui.activity.StartPageActivity;
-import www.jinke.com.charmhome.ui.activity.scene.EditSceneActivity;
-import www.jinke.com.charmhome.ui.activity.scene.SelectDeviceActivity;
-import www.jinke.com.charmhome.ui.activity.scene.TimeSelectActivity;
-import www.jinke.com.charmhome.ui.lock.DeviceAttributesActivity;
-import www.jinke.com.charmhome.ui.lock.InputFingerActivity;
-import www.jinke.com.charmhome.ui.lock.InputFingerFinishActivity;
-import www.jinke.com.charmhome.ui.lock.LockAddFailActivity;
-import www.jinke.com.charmhome.ui.lock.LockAddFinishActivity;
-import www.jinke.com.charmhome.ui.lock.LockDeviceInfoActivity;
+import www.jinke.com.charmhome.ui.activity.scene.SceneDelayActivity;
+import www.jinke.com.charmhome.ui.activity.scene.SecurityDelayActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button tx_hello_word;

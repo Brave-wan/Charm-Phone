@@ -9,15 +9,26 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
+import com.orvibo.homemate.api.LocalDataApi;
+import com.orvibo.homemate.api.SmartSceneApi;
+import com.orvibo.homemate.api.listener.BaseResultListener;
 import com.orvibo.homemate.bo.Device;
+import com.orvibo.homemate.bo.SceneBind;
+import com.orvibo.homemate.data.DeviceOrder;
+import com.orvibo.homemate.event.BaseEvent;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import www.jinke.com.charmhome.Base.Config;
 import www.jinke.com.charmhome.R;
 import www.jinke.com.charmhome.bean.SceneTaskBean;
 import www.jinke.com.charmhome.ui.activity.scene.SceneActionActivity;
 import www.jinke.com.charmhome.ui.activity.scene.SceneDelayActivity;
+import www.jinke.com.charmhome.ui.activity.scene.SecurityDelayActivity;
 import www.jinke.com.charmhome.ui.dialog.LogoutDialog;
+import www.jinke.com.charmhome.utils.SharedPreferencesUtils;
 
 /**
  * Created by root on 18-3-15.
@@ -42,6 +53,8 @@ public class SceneTaskListAdapter extends CommonAdapter<SceneTaskBean> {
         RelativeLayout rl_task_add = (RelativeLayout) baseViewHolder.getViewByViewId(R.id.rl_task_add);
         ImageView img_add_line_red = (ImageView) baseViewHolder.getViewByViewId(R.id.img_add_line_red);
         ImageView img_scene_delete = (ImageView) baseViewHolder.getViewByViewId(R.id.img_scene_delete);
+        TextView tv_scene_time = (TextView) baseViewHolder.getViewByViewId(R.id.tv_scene_time);
+        TextView tv_scene_action_type = (TextView) baseViewHolder.getViewByViewId(R.id.tv_scene_action_type);
 
         RelativeLayout rl_scene_action = (RelativeLayout) baseViewHolder.getViewByViewId(R.id.rl_scene_action);
         RelativeLayout rl_scene_delay = (RelativeLayout) baseViewHolder.getViewByViewId(R.id.rl_scene_delay);
@@ -50,10 +63,16 @@ public class SceneTaskListAdapter extends CommonAdapter<SceneTaskBean> {
         img_add_line_red.setVisibility(device == null ? (position == 0 ? View.VISIBLE : View.GONE) : View.GONE);
 
         if (device != null) {
+            //设置情景设备名称
             tv_device_name.setText(device.getDeviceName());
             img_red_line.setVisibility(position == 0 ? View.VISIBLE : View.GONE);
             setIcon(device.getDeviceType(), tv_device_name);
             tv_device_room_name.setText(bean.getRoom().getRoomName());
+        }
+        //设置情景执行时间和执行动作
+        if (bean.getSceneBind() != null) {
+            tv_scene_time.setText(bean.getSceneBind().getDelayTime() + "秒后");
+            tv_scene_action_type.setText(bean.getSceneBind().getActionType() + "");
         }
 
         rl_task_add.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +85,7 @@ public class SceneTaskListAdapter extends CommonAdapter<SceneTaskBean> {
         img_scene_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog(bean);
+                deleteBinding(bean);
             }
         });
 
@@ -100,7 +119,7 @@ public class SceneTaskListAdapter extends CommonAdapter<SceneTaskBean> {
 
             @Override
             public void onRightClick() {
-                listener.onDeleteScene(bean);
+
             }
         });
     }
@@ -137,20 +156,47 @@ public class SceneTaskListAdapter extends CommonAdapter<SceneTaskBean> {
                 drawable = context.getResources().getDrawable(R.drawable.icon_device_select_lamp_red);
                 break;
             case 4://百叶窗
-                drawable = context.getResources().getDrawable(R.drawable.icon_device_select_curtain_red);
+                drawable = context.getResources().getDrawable(R.drawable.icon_edit_scene_curtain);
                 break;
             case 5://空调
-                drawable = context.getResources().getDrawable(R.drawable.icon_device_select_air_condition_red);
+                drawable = context.getResources().getDrawable(R.drawable.icon_edit_scene_aircondition);
                 break;
             case 6://电视
-                drawable = context.getResources().getDrawable(R.drawable.icon_device_select_tv_red);
+                drawable = context.getResources().getDrawable(R.drawable.icon_edit_scene_tv);
                 break;
             case 34:
-                drawable = context.getResources().getDrawable(R.drawable.icon_device_select_curtain_red);
+                drawable = context.getResources().getDrawable(R.drawable.icon_edit_scene_curtain);
                 break;
         }
         // 这一步必须要做，否则不会显示。
         drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());// 设置图片宽高
         imageView.setCompoundDrawables(drawable, null, null, null);// 设置到控件中
+    }
+
+    public void deleteBinding(final SceneTaskBean bean) {
+        List<SceneBind> sceneBinds = new ArrayList<SceneBind>();
+        SceneBind sceneBind = new SceneBind();
+        //设置的延迟时间，比如灯延迟多久打开或者关闭，此处为1S，因为单位为100毫秒
+        sceneBind.setDelayTime(10);
+        //控制的order,灯关
+        sceneBind.setCommand(DeviceOrder.OFF);
+        //  sceneBind.setValue1(0); value字段根据order处提示进行填写，默认为0
+        //根据列表顺序填唯一数字，绑定设备的结果里会返回此id，以确定哪些设备绑定成功
+        String sceneNo = SharedPreferencesUtils.init(context).getString("scene_no1");
+        List<SceneBind> scenes = LocalDataApi.getSceneBindsByScene(sceneNo);
+        for (int i = 0; i < scenes.size(); i++) {
+            if (scenes.get(i).getDeviceId().equals(bean.getDevice().getDeviceId())) {
+                sceneBinds.add(scenes.get(i));
+            }
+        }
+        SmartSceneApi.deleteSceneBind(Config.userName, sceneNo, sceneBinds, new BaseResultListener() {
+            @Override
+            public void onResultReturn(BaseEvent baseEvent) {
+                if (baseEvent.isSuccess()) {
+                    LogUtils.i("删除情景绑定");
+                    listener.onDeleteScene(bean);
+                }
+            }
+        });
     }
 }
